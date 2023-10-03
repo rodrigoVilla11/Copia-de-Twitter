@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  gateway:
+    container_name: gateway
+    restart: always
+    build: ./gateway
+    ports:
+      - "8000:8000"
+  characters:
+    container_name: tweets
+    restart: always
+    build: ./tweets
+    ports:
+      - "8001:8001"
+  films:
+    container_name: accounts
+    restart: always
+    build: ./accounts
+    ports:
+      - "8002:8002"
+  database:
+    container_name: database
+    restart: always
+    build: ./database
+    ports:
+      - "8003:8003"
